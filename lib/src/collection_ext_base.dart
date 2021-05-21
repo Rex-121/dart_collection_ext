@@ -1,6 +1,6 @@
 import 'dart:math';
 
-extension Extension<T> on List<T> {
+extension Extension<T> on Iterable<T> {
   void zip<Z>(Iterable<Z> other, Function(T, Z) zipper) {
     if (isEmpty || other.isEmpty) return;
     for (var i = 0; i < min(length, other.length); i++) {
@@ -13,4 +13,11 @@ extension Extension<T> on List<T> {
     zip(other, (t, z) => ks.add(zipper(t, z)));
     return ks;
   }
+
+  T get randomElement {
+    if (isEmpty) return null;
+    if (length == 1) return first;
+    return elementAt(Random().nextInt(length));
+  }
+  
 }
