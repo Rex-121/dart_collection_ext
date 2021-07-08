@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library collection_ext;
 
-export 'src/collection_ext_base.dart';
+export 'src/zip.dart';
+export 'src/random.dart';
 
 // TODO: Export any libraries intended for clients of this package.
